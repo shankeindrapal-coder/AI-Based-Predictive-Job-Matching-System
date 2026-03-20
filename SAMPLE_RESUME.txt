@@ -1,0 +1,63 @@
+JOHN DOE
+john.doe@email.com | (555) 123-4567 | LinkedIn: linkedin.com/in/johndoe
+
+PROFESSIONAL SUMMARY
+Experienced Software Engineer with 5 years of expertise in full-stack development and cloud technologies. Skilled in designing and implementing scalable web applications using modern frameworks and best practices.
+
+TECHNICAL SKILLS
+Programming Languages: Python, JavaScript, Java, C++, TypeScript
+Web Development: HTML5, CSS3, React, Node.js, Angular, Vue.js
+Backend: Spring Boot, Express.js, REST API, Microservices
+Databases: PostgreSQL, MongoDB, MySQL, Redis
+Cloud & DevOps: AWS, Docker, Kubernetes, CI/CD, Jenkins, Terraform
+Tools: Git, GitHub, VS Code, IntelliJ IDEA, Linux, Bash
+
+PROFESSIONAL EXPERIENCE
+
+Senior Software Engineer | Tech Company XYZ | 2021 - Present
+- Developed and maintained microservices using Java Spring Boot
+- Designed REST APIs for mobile and web applications
+- Implemented CI/CD pipelines using Jenkins and Kubernetes
+- Team lead for full-stack development projects
+- Mentored junior developers on best practices
+
+Full Stack Developer | Digital Solutions Inc | 2018 - 2021
+- Built responsive web applications using React and Node.js
+- Designed PostgreSQL databases for complex applications
+- Implemented AWS cloud infrastructure for scalable solutions
+- Worked with Docker for containerization
+- Collaborated with cross-functional teams
+
+Junior Developer | StartUp Tech | 2017 - 2018
+- Developed JavaScript frontend components
+- Created Python scripts for data processing
+- Implemented HTML/CSS responsive designs
+- Participated in agile development processes
+
+EDUCATION
+Bachelor of Science in Computer Science
+University Name | 2017
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect
+- Kubernetes Administrator Certified
+- Google Cloud Professional
+
+PROJECTS
+Job Matching System (Python, Flask, Machine Learning)
+- Created AI-powered resume analyzer
+- Implemented TF-IDF algorithms for job matching
+- Built responsive web interface
+
+E-Commerce Platform (React, Node.js, PostgreSQL)
+- Developed full-stack application for online sales
+- Implemented payment integration
+- Used Docker and AWS for deployment
+
+LANGUAGES
+English (Fluent), Spanish (Intermediate)
+
+ACHIEVEMENTS
+- Reduced application load time by 40% through optimization
+- Led team of 5 developers in successful project delivery
+- Published technical articles on Medium (300+ followers)
