@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume - Job Matching System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            max-width: 600px;
+            width: 100%;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 45px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .upload-area {
+            border: 4px dashed #667eea;
+            border-radius: 20px;
+            padding: 60px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+        
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .upload-area.dragover {
+            border-color: #764ba2;
+            background: linear-gradient(135deg, #667eea30 0%, #764ba230 100%);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+        }
+        
+        .upload-icon {
+            font-size: 70px;
+            margin-bottom: 25px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .upload-text {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .upload-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .file-input-label {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .file-input-label:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+        
+        .file-name {
+            margin-top: 20px;
+            color: #28a745;
+            font-weight: 700;
+            display: none;
+            font-size: 16px;
+            padding: 12px;
+            background: #d4edda;
+            border-radius: 10px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.4);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.6);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .back-link:hover {
+            color: #764ba2;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .upload-icon {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Upload Your Resume</h1>
+        <p class="subtitle">Submit your PDF resume to discover your perfect job matches based on skills</p>
+        
+        <form method="POST" enctype="multipart/form-data" id="uploadForm">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📤</div>
+                <p class="upload-text">Drag & Drop Your PDF Here</p>
+                <p class="upload-desc">or click below to select file</p>
+                <label for="resume" class="file-input-label">Choose PDF File</label>
+                <input type="file" id="resume" name="resume" accept=".pdf" required>
+                <div class="file-name" id="fileName"></div>
+            </div>
+            
+            <button type="submit" class="submit-btn">🚀 Analyze My Resume</button>
+        </form>
+        
+        <a href="/" class="back-link">← Back to Home</a>
+    </div>
+    
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('resume');
+        const fileName = document.getElementById('fileName');
+        
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                displayFileName(files[0].name);
+            }
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                displayFileName(e.target.files[0].name);
+            }
+        });
+        
+        function displayFileName(name) {
+            fileName.textContent = '✓ Selected: ' + name;
+            fileName.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

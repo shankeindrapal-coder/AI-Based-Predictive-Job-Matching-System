@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Matching System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 80px 60px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            max-width: 700px;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 56px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 20px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .feature {
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid #667eea30;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea25 0%, #764ba225 100%);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .feature p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(102, 126, 234, 0.8);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 50px 30px;
+            }
+            
+            h1 {
+                font-size: 40px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                font-size: 18px;
+                padding: 16px 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-icon">🎯</div>
+        <h1>Job Matching System</h1>
+        <p class="subtitle">Transform Your Career with AI-Powered Job Matching</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Smart Matching</h3>
+                <p>Advanced AI analyzes your resume instantly</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Detailed Analytics</h3>
+                <p>Get percentages, scores & skill insights</p>
+            </div>
+        </div>
+        
+        <a href="/upload" class="cta-button">📤 Start Now →</a>
+    </div>
+</body>
+</html>
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Matching System</h1>
+    <p>Upload your resume to find the best matching job roles</p>
+    <a href="/upload">Upload Resume</a>
+</body>
+</html>
